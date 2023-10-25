@@ -1,0 +1,278 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="episode-tracker">
+      <button onclick="increaseEpisodes()">+1</button>
+      <button onclick="decreaseEpsiodes()">-1</button>
+    </div>
+
+    <script>
+      //1
+      const purchaseValue = 800;
+      const money = 1000;
+      if (money >= purchaseValue) {
+        console.log("Transaction accepted");
+      } else {
+        console.log("Transaction denied");
+      }
+
+      //2
+      const HP = 90;
+      const potion = 20;
+
+      if (HP === 100) {
+      } else if (HP === 0) {
+        console.log(`You cannot use a potion when you're dead`);
+      } else {
+        // console.log(`${Math.min(HP + potion, 100)}`);
+        console.log(`${HP + potion > 100 ? 100 : HP + potion}`);
+      }
+
+      //3
+      const randomNumber1 = 1;
+
+      if (randomNumber1 % 2 === 1) {
+        console.log(`${randomNumber1} is an odd number`);
+      } else {
+        console.log(`${randomNumber1} is an even number`);
+      }
+
+      //4
+      const randomNumber2 = 65;
+      if (randomNumber2 >= 0 && randomNumber2 <= 100) {
+        console.log(`${randomNumber2} is between 0 and 100`);
+      } else {
+        console.log(`${randomNumber2} is outside the range of 0 and 100`);
+      }
+
+      //5
+      const months = {
+        1: "January",
+        2: "February",
+        3: "March",
+        4: "April",
+        5: "May",
+        6: "June ",
+        7: "July ",
+        8: "August",
+        9: "September",
+        10: "October",
+        11: "November",
+        12: "December",
+      };
+
+      const month = 2;
+      const year = 2014;
+
+      if (
+        month === 1 ||
+        month === 3 ||
+        month === 5 ||
+        month === 7 ||
+        month === 8 ||
+        month === 10 ||
+        month === 12
+      ) {
+        console.log(`${months[month]} has 31 days.`);
+      } else if (
+        month === 1 ||
+        month === 4 ||
+        month === 6 ||
+        month === 9 ||
+        month === 11
+      ) {
+        console.log(`${months[month]} has 30 days.`);
+      } else {
+        const isLeapYear =
+          (0 === year % 4 && 0 !== year % 100) || 0 === year % 400;
+        console.log(`${months[month]} has ${isLeapYear ? 29 : 28} days`);
+      }
+
+      //6
+      const date = new Date();
+      const hours = date.getHours();
+      const minutes = date.getMinutes();
+      const seconds = date.getSeconds();
+
+      console.log(`${hours}:${minutes}`);
+      console.log(`${hours}:${minutes}:${seconds}`);
+
+      if (hours > 12 && hours <= 23) {
+        console.log(`${hours - 12}:${minutes} PM`);
+      } else {
+        console.log(`${hours}:${minutes} AM`);
+      }
+
+      //7
+      function calculateStats(finishedGames, hoursPlayed) {
+        return `You have finished ${finishedGames} games, your total play time is ${(
+          hoursPlayed / 24
+        ).toFixed(
+          2
+        )} days and the average length of the games you finished was ${(
+          hoursPlayed / finishedGames
+        ).toFixed(2)} hours.`;
+      }
+
+      const finishedGames = 241;
+      const hoursPlayed = 2810;
+
+      const statsAsString = calculateStats(finishedGames, hoursPlayed);
+
+      console.log(statsAsString);
+
+      //8
+
+      function findSquare(number) {
+        return number * number;
+      }
+      console.log(findSquare(2)); // 4
+      console.log(findSquare(3)); // 9
+      console.log(findSquare(4)); // 16
+
+      //9
+      function calculateArea(number, number2) {
+        return number * number2;
+      }
+
+      console.log(calculateArea(2, 3)); // 6
+      console.log(calculateArea(4, 5)); // 20
+      console.log(calculateArea(5, 6)); // 30
+
+      //10
+      function calculatePerimeter(number) {
+        return (2 * Math.PI * number).toFixed(2);
+      }
+
+      console.log(calculatePerimeter(2)); // 12.57
+      console.log(calculatePerimeter(3)); // 18.85
+      console.log(calculatePerimeter(4)); // 25.13
+
+      //11
+
+      function findLongestSide(number1, number2, number3) {
+        return Math.max(number1, number2, number3);
+      }
+
+      console.log(findLongestSide(2, 3, 4)); // 4
+      console.log(findLongestSide(5, 2, 7)); // 7
+      console.log(findLongestSide(14, 9, 10)); // 14
+
+      //12
+      function gradeTest(result) {
+        if (result <= 100 && result >= 90) {
+          return "A";
+        } else if (result <= 89 && result >= 80) {
+          return "B";
+        } else if (result <= 79 && result >= 70) {
+          return "C";
+        } else if (result <= 69 && result >= 60) {
+          return "D";
+        } else {
+          return "F";
+        }
+      }
+
+      console.log(gradeTest(90)); // A
+      console.log(gradeTest(80)); // B
+      console.log(gradeTest(70)); // C
+      console.log(gradeTest(60)); // D
+      console.log(gradeTest(50)); // F
+
+      //13
+      function calculateFPS(frames, seconds) {
+        return (frames / seconds).toFixed(0);
+      }
+
+      console.log(calculateFPS(1, 1)); // 1 FPS
+      console.log(calculateFPS(120, 10)); // 12 FPS
+      console.log(calculateFPS(80458, 250)); // 322 FPS
+
+      //14
+
+      function increaseEpisodes() {
+        episodeNumber++;
+        h1.innerText = `You have seen ${episodeNumber} episodes out of the 73 of Game of Thrones`;
+        localStorage.setItem("episodeNumber", episodeNumber);
+      }
+
+      function decreaseEpsiodes() {
+        episodeNumber--;
+        h1.innerText = `You have seen ${episodeNumber} episodes out of the 73 of Game of Thrones`;
+        localStorage.setItem("episodeNumber", episodeNumber);
+      }
+
+      let episodeNumber = localStorage.getItem("episodeNumber") || 0;
+
+      localStorage.setItem("episodeNumber", episodeNumber);
+
+      const container = document.getElementById("episode-tracker");
+      const h1 = document.createElement("h1");
+      h1.innerText = `You have seen ${episodeNumber} episodes out of the 73 of Game of Thrones`;
+      container.insertBefore(h1, container.firstChild);
+
+      //15
+      const description = {
+        id: "98ghs78",
+        name: "Nike shoes",
+        originalPrice: 15,
+        discount: 10,
+      };
+      const discountPrice =
+        description.originalPrice -
+        description.originalPrice * (description.discount / 100);
+
+      console.log(
+        `The product ${description.name} originally costs $${description.originalPrice}. With a ${description.discount}% discount, it only costs $${discountPrice}.`
+      );
+
+      //16
+      // const personalData = {
+      //   age: 25,
+      //   name: "John",
+      //   country: "US",
+      //   state: "CA",
+      //   address: "136 Bel Meadow Drive",
+      //   phone: "909-405-2535",
+      // };
+      // const answer = prompt("What do you want to know about this person?");
+
+      // alert(
+      //   personalData[answer] === undefined
+      //     ? "Sorry, we don't have that information about them"
+      //     : `The person's ${answer} is ${personalData[answer]}`
+      // );
+
+      //17
+      function rollDice(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+
+      const firstRoll = rollDice(1, 6);
+      const secondRoll = rollDice(1, 6);
+
+      const result = firstRoll + secondRoll;
+
+      console.log(`${firstRoll} + ${secondRoll} = ${result}`);
+
+      //18
+
+      function takeTwoNubmer(number1, number2) {
+        return number1 > number2 ? number1 : number2;
+      }
+
+      console.log(takeTwoNubmer(12, 10));
+
+      //19
+
+      function isLandscape(width, height) {
+        return width > height;
+      }
+      console.log(isLandscape(50, 49));
+    </script>
+  </body>
+</html>

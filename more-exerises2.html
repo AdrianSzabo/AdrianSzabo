@@ -1,0 +1,29 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/more-exercises2.css" />
+    <script src="scripts/more-exercises2.js"></script>
+  </head>
+  <body>
+    <div>
+      <p class="password">Password</p>
+      <input
+        placeholder="Type your password here"
+        id="input-pw"
+        class="input-password"
+        type="password"
+        onkeyup="onKeyUp(event)" />
+    </div>
+    <div>
+      <p class="pw-strength">Password Strength</p>
+      <div>
+        <div class="pw-strength-meter">
+          <div class="rating"></div>
+        </div>
+      </div>
+    </div>
+    <button class="register-btn" disabled>Register</button>
+  </body>
+</html>

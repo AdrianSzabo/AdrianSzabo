@@ -1,0 +1,48 @@
+.amazon-btn {
+  background-color: #ffd814;
+  border: none;
+  width: 150px;
+  padding: 8px;
+  border-radius: 50px;
+}
+.uber-request-btn {
+  color: #ffffff;
+  background-color: #000000;
+  border-radius: 5px;
+  padding: 10px 8px;
+  border: none;
+  width: 120px;
+  margin-right: 12px;
+  font-weight: bold;
+}
+.uber-scedule-btn {
+  background-color: #e6e6e6;
+  color: black;
+  border: none;
+  padding: 10px 8px;
+  width: 145px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.gaming-button-off,
+.music-button-off,
+.tech-button-off {
+  color: black;
+  background-color: #e0e0e0;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  width: 75px;
+  cursor: pointer;
+}
+.gaming-button-on,
+.music-button-on,
+.tech-button-on {
+  color: white;
+  background-color: #000000;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  width: 75px;
+  cursor: pointer;
+}

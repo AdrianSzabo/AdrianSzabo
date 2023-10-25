@@ -1,0 +1,98 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="playGame('heads')">heads</button>
+    <button onclick="playGame('tails')">talis</button>
+
+    <script>
+      //a && b
+      product = {
+        name: "basketball",
+        price: 2095,
+      };
+      console.log(product);
+
+      product.price = 2095 + 500;
+      console.log(product);
+
+      //c
+      product["delivery-time"] = "3 day";
+      console.log(product);
+
+      //d && e
+      function comparePrice(product1, product2) {
+        if (product1.price < product2.price) {
+          return product1;
+        } else {
+          return product2;
+        }
+      }
+
+      const product1 = {
+        name: "beer",
+        price: "650",
+      };
+      const product2 = {
+        name: "sio",
+        price: "550",
+      };
+      console.log(comparePrice(product1, product2));
+
+      function isSameProduct(product1, product2) {
+        return (
+          product1.name === product2.name && product1.price === product2.price
+        );
+      }
+
+      const product3 = {
+        name: "beer",
+        price: "650",
+      };
+      const product4 = {
+        name: "sio",
+        price: "550",
+      };
+      const product5 = {
+        name: "beer",
+        price: "650",
+      };
+      console.log(isSameProduct(product3, product4));
+      console.log(isSameProduct(product3, product5));
+
+      //f
+      const text = "Good Morning";
+      const textResult = text.toLowerCase();
+      console.log(textResult);
+
+      const test = "test";
+      console.log(test.repeat(2));
+
+      //8i
+      const score = JSON.parse(localStorage.getItem("score")) || {
+        wins: 0,
+        losses: 0,
+      };
+
+      console.log(score);
+
+      function playGame(guess) {
+        const randomNumber = Math.random();
+        const result = randomNumber < 0.5 ? "heads" : "tails";
+
+        console.log(guess === result ? "You win!" : "You lose!");
+
+        if (guess === result) {
+          score.wins++;
+        } else {
+          score.losses++;
+        }
+        console.log(score);
+        localStorage.setItem("score", JSON.stringify(score));
+      }
+    </script>
+  </body>
+</html>
