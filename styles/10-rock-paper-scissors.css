@@ -19,6 +19,18 @@ body {
   margin-right: 10px;
   cursor: pointer;
 }
+
+@media (max-width: 700px) {
+  .move-button {
+    height: 80px;
+    width: 80px;
+  }
+
+  .move-icon {
+    height: 30px;
+  }
+}
+
 .result {
   font-size: 25px;
   font-weight: bold;
